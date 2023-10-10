@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './principal/index/index.component';
-import { PessoasListComponent } from './pessoas/pessoas-list/pessoas-list.component';
+import { PessoasListComponent } from './pessoas/pessoasLista/pessoasLista.component';
 import { LivroComponent } from './livros/livroList/livro.component';
-import { CarroListaComponent } from './carros/carroList/carroLista.component';
+import { CarroListaComponent } from './carros/carroLista/carroLista.component';
 
 const routes: Routes = [
   {path:"", component: IndexComponent,children:[

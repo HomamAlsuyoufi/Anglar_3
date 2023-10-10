@@ -3,12 +3,14 @@ import { Carro } from '../carro';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-carro-lista',
+  selector: 'app-carroLista',
   templateUrl: './carroLista.component.html',
   styleUrls: ['./carroLista.component.scss']
 })
 export class CarroListaComponent {
   carros: Carro[] = [];
+  novoCarro: Carro = new Carro();
+
 
   modalService = inject(NgbModal);
 
@@ -17,7 +19,6 @@ export class CarroListaComponent {
 
 
   ngOnInit() {
-    
     let carro = new Carro();
     carro.id = 1;
     carro.ano = 2000;
@@ -30,18 +31,18 @@ export class CarroListaComponent {
     this.carroParaEditar = new Carro();
     this.modalService.open(abc, { size: 'lg' });
 
-    const element: HTMLElement = document.getElementById('h4') as HTMLElement 
-    element.innerHTML = 'Cadastrar Carro'
+    /*const element: HTMLElement = document.getElementById('h4') as HTMLElement 
+    element.innerHTML = 'Cadastrar Carro'*/
   }
 
-
   carroParaEditar: Carro = new Carro();
+
   abrirModalEditar(abc: any, carro: Carro) {
     this.carroParaEditar = { ...carro };
     this.modalService.open(abc, { size: 'lg' });
 
-    const element: HTMLElement = document.getElementById('h4') as HTMLElement 
-    element.innerHTML = 'Editar Carro'
+    /*const element: HTMLElement = document.getElementById('h4') as HTMLElement 
+    element.innerHTML = 'Editar Carro'*/
   }
 
 

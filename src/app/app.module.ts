@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './principal/header/header.component';
 import { FooterComponent } from './principal/footer/footer.component';
 import { IndexComponent } from './principal/index/index.component';
-import { PessoasListComponent } from './pessoas/pessoas-list/pessoas-list.component';
-import { CarroListaComponent } from './carros/carroList/carroLista.component';
+import { PessoasListComponent } from './pessoas/pessoasLista/pessoasLista.component';
+import { CarroListaComponent } from './carros/carroLista/carroLista.component';
 import { LivroComponent } from './livros/livroList/livro.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { PessoaCadastrarComponent } from './pessoas/pessoa-cadastrar/pessoa-cadastrar.component';
+import { PessoaCadastrarComponent } from './pessoas/pessoa-detalhes/pessoa-detalhes.component';
 import { CarroDetalhesComponent } from './carros/carro-detalhes/carro-detalhes.component';
 import { LivroCadastrarComponent } from './livros/livro-cadastrar/livro-cadastrar.component';
 

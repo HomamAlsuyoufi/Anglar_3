@@ -1,7 +1,5 @@
-import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Carro } from '../carro';
-import { FormsModule } from '@angular/forms';
-
 @Component({
   selector: 'app-carro-detalhes',
   templateUrl: './carro-detalhes.component.html',
