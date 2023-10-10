@@ -1,4 +1,4 @@
-import { Component, ViewChild, inject } from '@angular/core';
+import { Component,inject } from '@angular/core';
 import { Carro } from '../carro';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -9,7 +9,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarroListaComponent {
   carros: Carro[] = [];
-  novoCarro: Carro = new Carro();
 
   modalService = inject(NgbModal);
 
@@ -30,6 +29,9 @@ export class CarroListaComponent {
   abrirModalCadastrar(abc: any){
     this.carroParaEditar = new Carro();
     this.modalService.open(abc, { size: 'lg' });
+
+    const element: HTMLElement = document.getElementById('h4') as HTMLElement 
+    element.innerHTML = 'Cadastrar Carro'
   }
 
 
@@ -37,12 +39,14 @@ export class CarroListaComponent {
   abrirModalEditar(abc: any, carro: Carro) {
     this.carroParaEditar = { ...carro };
     this.modalService.open(abc, { size: 'lg' });
+
+    const element: HTMLElement = document.getElementById('h4') as HTMLElement 
+    element.innerHTML = 'Editar Carro'
   }
 
 
   
-  atualizarLista(carro: Carro){
-    
+  atualizarLista(carro: Carro){    
     if (this.carroParaEditar.id > 0) {
       let index = this.carros.findIndex(carro => carro.id === this.carroParaEditar.id);
       this.carros[index] = carro;
@@ -52,19 +56,5 @@ export class CarroListaComponent {
     }
 
     this.modalService.dismissAll();
-  }
-
-
-  salvarEdicao() {
-    
-  let index = this.carros.findIndex(carro => carro.nome === this.carroParaEditar.nome);
-
-  index = index +1;
-
-  if (index !== -1) {
-    this.carros[index].nome = this.carroParaEditar.nome;
-    this.carros[index].ano = this.carroParaEditar.ano;
-  }
-  this.modalService.dismissAll();
   }
 }

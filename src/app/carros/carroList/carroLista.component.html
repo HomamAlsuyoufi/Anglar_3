@@ -29,7 +29,7 @@
 
 <ng-template #abc let-modal>
 <div class="modal-header">
-  <h4 class="modal-title">Cadastrar Carro</h4>
+  <h4 id="h4" class="modal-title"></h4>
   <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 </div>
 <div class="modal-body">
@@ -43,26 +43,3 @@
 </ng-template>
 
 
-<!-- 
-<ng-template #abcEditar let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title">Editar Carro</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-  </div>
-  <div class="modal-body">
-    <div class="mb-3">
-      <span class="form-label">Nome:</span>
-      <input class="form-control" type="text" [(ngModel)]="carroParaEditar.nome" />
-    </div>
-
-    <div class="mb-3">
-      <span class="form-label">Ano:</span>
-      <input class="form-control" type="number" [(ngModel)]="carroParaEditar.ano" />
-    </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-success" (click)="salvarEdicao()">Salvar</button>
-    <button type="button" class="btn btn-light" (click)="modal.dismiss('Close click')">Cancelar</button>
-  </div>
-</ng-template>
--->
