@@ -2,7 +2,7 @@
   <h2>Lista de Carros</h2>
 </div>
 <div class="d-flex flex-row-reverse botao">
-  <button (click)="abrirModal(abc)" class="btn btn-light bg-success bg-gradient text-white">Nova Carro</button>
+  <button (click)="abrirModalCadastrar(abc)" class="btn btn-light bg-success bg-gradient text-white">Nova Carro</button>
 </div>
 <div class="container">
 <table class="table table-bordered">
@@ -20,7 +20,7 @@
           {{carro.ano}}
       </td>
       <td>
-        <button (click)="abrirModalEditar(carro)" class="btn btn-primary btn-sm">Editar</button>
+        <button (click)="abrirModalEditar(abc, carro)" class="btn btn-primary btn-sm">Editar</button>
       </td>
   </tr>
 </table>
@@ -34,7 +34,7 @@
 </div>
 <div class="modal-body">
   
-      <app-carro-cadastrar (retorno)="addNaLista($event)" ></app-carro-cadastrar>
+      <app-carro-detalhes [carro]="carroParaEditar" (retorno)="atualizarLista($event)" ></app-carro-detalhes>
           
 </div>
 <div class="modal-footer">
@@ -43,7 +43,7 @@
 </ng-template>
 
 
-<!-- Modal de Edição -->
+<!-- 
 <ng-template #abcEditar let-modal>
   <div class="modal-header">
     <h4 class="modal-title">Editar Carro</h4>
@@ -65,3 +65,4 @@
     <button type="button" class="btn btn-light" (click)="modal.dismiss('Close click')">Cancelar</button>
   </div>
 </ng-template>
+-->

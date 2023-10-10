@@ -7,12 +7,12 @@ import { HeaderComponent } from './principal/header/header.component';
 import { FooterComponent } from './principal/footer/footer.component';
 import { IndexComponent } from './principal/index/index.component';
 import { PessoasListComponent } from './pessoas/pessoas-list/pessoas-list.component';
-import { CarroComponent } from './carros/carroList/carro.component';
+import { CarroListaComponent } from './carros/carroList/carroLista.component';
 import { LivroComponent } from './livros/livroList/livro.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { PessoaCadastrarComponent } from './pessoas/pessoa-cadastrar/pessoa-cadastrar.component';
-import { CarroCadastrarComponent } from './carros/carro-cadastrar/carro-cadastrar.component';
+import { CarroDetalhesComponent } from './carros/carro-detalhes/carro-detalhes.component';
 import { LivroCadastrarComponent } from './livros/livro-cadastrar/livro-cadastrar.component';
 
 @NgModule({
@@ -22,10 +22,10 @@ import { LivroCadastrarComponent } from './livros/livro-cadastrar/livro-cadastra
     FooterComponent,
     IndexComponent,
     PessoasListComponent,
-    CarroComponent,
+    CarroListaComponent,
     LivroComponent,
     PessoaCadastrarComponent,
-    CarroCadastrarComponent,
+    CarroDetalhesComponent,
     LivroCadastrarComponent
   ],
   imports: [
