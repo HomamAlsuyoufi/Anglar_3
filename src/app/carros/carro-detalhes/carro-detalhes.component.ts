@@ -16,7 +16,7 @@ export class CarroDetalhesComponent {
     // Verifique se os campos foram preenchidos corretamente antes de emitir o evento
     if (this.carro.nome && this.carro.ano) {
       this.retorno.emit(this.carro);// ESTA LINHA ESTÁ PEGANDO O CARRO DA TELA E ENVIANDO PARA A LISTA NA FUNÇÃO atualizarLista()
-      this.carro = new Carro(); // Limpe o objeto Carro após o cadastro
+      this.carro = new Carro(); // Limpe o objeto novoCarro após o cadastro
     }
   }
 }

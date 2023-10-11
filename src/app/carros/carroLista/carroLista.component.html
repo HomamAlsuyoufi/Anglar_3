@@ -7,15 +7,19 @@
 <div class="container">
 <table class="table table-bordered">
   <tr>
-      <th>Nome</th>
-      <th>Ano</th>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>Ano</th>
       <th>Ação</th>
   </tr>
 
   <tr *ngFor="let carro of carros; let i = index">
       <td>
-          {{carro.nome}}
+          {{carro.id}}
       </td>
+      <td>
+        {{carro.nome}}
+    </td>
       <td>
           {{carro.ano}}
       </td>
@@ -41,5 +45,3 @@
   <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
 </div>
 </ng-template>
-
-

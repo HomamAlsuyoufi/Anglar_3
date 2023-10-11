@@ -1,4 +1,4 @@
-import { Component,inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Carro } from '../carro';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,7 +11,6 @@ export class CarroListaComponent {
   carros: Carro[] = [];
   novoCarro: Carro = new Carro();
 
-
   modalService = inject(NgbModal);
 
 
@@ -20,7 +19,7 @@ export class CarroListaComponent {
 
   ngOnInit() {
     let carro = new Carro();
-    carro.id = 1;
+    carro.id = 4;
     carro.ano = 2000;
     carro.nome = 'Monza';
     this.carros.push(carro);
@@ -30,32 +29,29 @@ export class CarroListaComponent {
   abrirModalCadastrar(abc: any){
     this.carroParaEditar = new Carro();
     this.modalService.open(abc, { size: 'lg' });
-
-    /*const element: HTMLElement = document.getElementById('h4') as HTMLElement 
-    element.innerHTML = 'Cadastrar Carro'*/
   }
 
   carroParaEditar: Carro = new Carro();
 
   abrirModalEditar(abc: any, carro: Carro) {
-    this.carroParaEditar = { ...carro };
-    this.modalService.open(abc, { size: 'lg' });
-
-    /*const element: HTMLElement = document.getElementById('h4') as HTMLElement 
-    element.innerHTML = 'Editar Carro'*/
-  }
+    this.carroParaEditar = Object.assign({},  carro);
+    this.modalService.open(abc, { size: 'lg' });}
 
 
+    geradorId: number = 999;
   
-  atualizarLista(carro: Carro){    
-    if (this.carroParaEditar.id > 0) {
-      let index = this.carros.findIndex(carro => carro.id === this.carroParaEditar.id);
-      this.carros[index] = carro;
-
-    } else{
-      this.carros.push(carro);
+    atualizarLista(carro: Carro) {
+      
+    
+      if (carro.id>0) {
+        const index = this.carros.findIndex(carro => carro.id === this.carroParaEditar.id);
+        this.carros[index] =  carro;
+      } else {
+        this.geradorId = this.geradorId + 1;
+        carro.id = this.geradorId;
+        this.carros.push(carro);
+      }
+    
+      this.modalService.dismissAll();
     }
-
-    this.modalService.dismissAll();
-  }
 }
